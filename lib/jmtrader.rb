@@ -9,17 +9,17 @@
 # puis on ferait une deuxième méthode pour faire ça sur chacune des entrées.
 
 def day_trader(array_of_value)
-day_for_sell = 0
-day_for_buy = 0
-max_profit = 0
-for first_index in 0..(array_of_value.length - 1)
-  for second_index in (first_index + 1)..(array_of_value.length - 1)
-    if array_of_value[second_index] - array_of_value[first_index] > max_profit
-     max_profit = array_of_value[second_index] - array_of_value[first_index]
-     day_for_sell = second_index
-     day_for_buy = first_index
+  day_for_sell = 0
+  day_for_buy = 0
+  max_profit = 0
+  for first_index in 0..(array_of_value.length - 1)
+    for second_index in (first_index + 1)..(array_of_value.length - 1)
+      if array_of_value[second_index] - array_of_value[first_index] > max_profit
+      max_profit = array_of_value[second_index] - array_of_value[first_index]
+      day_for_sell = second_index
+      day_for_buy = first_index
+      end
     end
-  end
   end
   return best_deal = [day_for_buy,day_for_sell]
 end

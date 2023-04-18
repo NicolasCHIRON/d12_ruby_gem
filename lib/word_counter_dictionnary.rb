@@ -2,26 +2,21 @@ def dictionnary
   ["below", "down", "go", "going", "horn", "how", "howdy", "it", "i", "low", "own", "part", "partner", "sit"]
 end
 
-
+# \W supprime tous les caractères hors lettres ; + combine plusieurs délimiteurs (supprime les espaces)
+#   print words.split(/\W+/)
+# Attention, supprime également les accents, les chiffres...
 def only_one(string, word)
-  return string.split(/\W+/).count(word)  
+  key = word
+  value = string.downcase.scan(word).length
+  if value > 0
+  return hash = {key => value}
+  end
 end
 
-# def word_counter(string, dictionnary)
-# hash_with_word_and_occurence = string.split(/\W+/).map{|word|}
-#   # for word in 0..(dictionnary.length-1)
-#   #   return 
-
-# end
-
-# # Certai 
-
-# words = "Howdy partner, sit down! How's it going?"
-
-# # \W tous les caractères hors lettres ; + combine plusieurs délimiteurs (supprime les espaces)
-#   print words.split(/\W+/)
-
-#   # Faire un hash qui pour chacun des mots du dictionnaire regarde le nombre d'occurence
-#   # dans le string transformé en tableau
-
-#   only_one
+def word_counter(string, dictionnary)
+  list_of_words = Hash.new
+  for word_in_dictionnary in 0..(dictionnary.length-1)
+    puts each_word = (only_one(string, dictionnary[word_in_dictionnary]))
+    # puts list_of_words.merge(each_word)
+  end
+end

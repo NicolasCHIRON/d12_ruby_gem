@@ -2,8 +2,8 @@ require_relative '../lib/word_counter_dictionnary'
 
 describe "the only_one method" do
   it "should count the occurence of one word in a sentence"do
-  expect(word_counter("below", "below")).to eq({"below"=>1})
-  expect(word_counter("Howdy partner, sit down! How's it going?", "how")).to eq({"how"=>2,})
+  expect(only_one("below", "below")).to eq({"below"=>1})
+  expect(only_one("Howdy partner, sit down! How's it going?", "how")).to eq({"how"=>2,})
   end
 end
 
